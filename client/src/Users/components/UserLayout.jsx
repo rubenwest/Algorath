@@ -9,6 +9,7 @@ import FilterRol from './FilterRol'
 import ChartMongoEmployees from './ChartMongoEmployees'
 import ChartMongoDepartments from './ChartMongoDepartments'
 import { saveUser, getUsers } from '../../services';
+import Swal from 'sweetalert2'
 
 function UserLayout() {
 
@@ -22,6 +23,13 @@ function UserLayout() {
 
         if (response.status===200) {
             setUsers(response.data.users)
+        }else
+        {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Remember wake up the server!'
+              })
         }
     }
 
@@ -52,7 +60,7 @@ function UserLayout() {
                         </Modal.Card.Title>
                     </Modal.Card.Head>
                     <Modal.Card.Body>
-                        <Form handleSubmit={handleSubmit}/>
+                        <Form handleSubmit={handleSubmit} setIsModalOpen={setIsModalOpen}/>
                     </Modal.Card.Body>
                 </Modal.Card>
             </Modal>

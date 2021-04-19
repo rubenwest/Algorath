@@ -3,7 +3,7 @@ import { Form as BulmaForm, Button} from 'react-bulma-components'
 
 const { Field, Control, Label, Input, Select } = BulmaForm
 
-const Form = ({ handleSubmit }) => {
+const Form = ({ handleSubmit, setIsModalOpen }) => {
 
     const [formValues, setFormValues] = useState({
         name: '',
@@ -66,7 +66,7 @@ const _handleSubmit = (e) =>{
                 <Button type= 'submit' color='primary'>
                     Save
                 </Button>
-                <Button color='danger'>
+                <Button color='danger' style={{ marginLeft: '15px' }} onClick={() => setIsModalOpen(false)} >
                     Close
                 </Button>
             </Field>

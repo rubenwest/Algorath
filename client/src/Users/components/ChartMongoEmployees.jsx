@@ -4,7 +4,8 @@ const ChartMongoEmployees = () => {
     return (
 
 
-            <iframe style={{    
+            <iframe title='employees'
+                    style={{    
                                 background: '#FFFFFF', 
                                 border: 'none',
                                 borderRadius: '2px',
